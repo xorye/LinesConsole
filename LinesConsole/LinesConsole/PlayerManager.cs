@@ -5,22 +5,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lines
+namespace LinesConsole
 {
     class PlayerManager
     {
-        private ArrayList playerList;
+        private PlayerList playerList;
         private Player currentPlayer;
 
         public PlayerManager()
         {
-            playerList = new ArrayList();
+            playerList = new PlayerList();
         }
 
         public void AddPlayer(String name)
         {
             Player player = new Player(name);
-            playerList.Add(player);
+            playerList.AddPlayer(player);
 
             if (GetNumberOfPlayers() == 1)
             {
@@ -30,20 +30,20 @@ namespace Lines
 
         public int GetNumberOfPlayers()
         {
-            return playerList.Count;
+            return playerList.Count();
         }
 
         
         public Edge CurrentPlayerMove()
         {
-            
+            return currentPlayer.GetMove();
         }
 
 
         // Updates the currentPlayer to the next player
         public void ChangeCurrentPlayer()
         {
-
+            currentPlayer = currentPlayer.GetNextPlayer();
         }
     }
 }

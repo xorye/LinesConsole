@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lines
+namespace LinesConsole
 {
     class Node
     {
@@ -15,10 +15,10 @@ namespace Lines
         public Node(int node_num)
         {
             this.node_num = node_num;
-            this.up = Program.NO_NODE;
-            this.down = Program.NO_NODE;
-            this.left = Program.NO_NODE;
-            this.right = Program.NO_NODE;
+            this.up = Program.NULL_NODE;
+            this.down = Program.NULL_NODE;
+            this.left = Program.NULL_NODE;
+            this.right = Program.NULL_NODE;
         }
     }
 }
