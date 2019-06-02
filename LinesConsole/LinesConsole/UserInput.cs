@@ -9,7 +9,20 @@ namespace LinesConsole
     class UserInput
     {
 
+        /// <summary>
+        /// Prompts the user to enter the player name.
+        /// </summary>
+        public static String GetPlayerName()
+        {
+            Console.WriteLine("Enter the player's name");
+            return ReadLine();
+        }
 
+        /// <summary>
+        /// Promts the user to enter the source and destination nodes
+        /// for their current move's edge
+        /// </summary>
+        /// <returns></returns>
         public static Edge GetEdge()
         {
             Console.WriteLine("Enter a move in this format: x,y");
@@ -21,19 +34,19 @@ namespace LinesConsole
                 try
                 {
                     newEdge = new Edge(twoIntegers);
-                    break;
+                    return newEdge;
                 }
                 catch (InvalidEdgeException)
                 {
                     twoIntegers = GetTwoIntegers();
                 }
             }
-
-
-
-
         }
 
+        /// <summary>
+        /// Returns two integers from user input
+        /// </summary>
+        /// <returns></returns>
         private static int[] GetTwoIntegers()
         {
             String input = ReadLine();

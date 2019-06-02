@@ -23,9 +23,7 @@ namespace LinesConsole
         public Edge GetMove()
         {
             // get source and dest node from user input
-            int source = 2;
-            int dest = 6;
-            return new Edge(source, dest);
+            return UserInput.GetEdge();
         }
 
         public void SetNextPlayer(Player player)

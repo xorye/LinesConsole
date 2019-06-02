@@ -8,13 +8,13 @@ namespace LinesConsole
 {
     class Edge
     {
-        int source, dest;
+        private int Source, Dest;
 
         public Edge(int source, int dest)
         {
-            
-            this.source = source;
-            this.dest = dest;
+            CheckValidEdge();
+            this.Source = source;
+            this.Dest = dest;
         }
 
         public Edge(int[] edges)
@@ -26,9 +26,9 @@ namespace LinesConsole
         /// Checks the validity of an edge by checking if the given nodes are
         /// adjacent to each other.
         /// </summary>
-        private void CheckValidEdge()
+        private void CheckValidEdge(int source, int dest)
         {
-
+            return;
         }
     }
 

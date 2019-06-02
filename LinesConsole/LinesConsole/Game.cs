@@ -10,20 +10,38 @@ namespace LinesConsole
     class Game
     {
 
-        private GameBoard board;
+        private GameBoard Board;
+        private PlayerManager PlayerManager;
+        private int NumPlayers, Width, Height;
 
 
-        public Game()
+        public Game(int numPlayers, int width, int height)
         {
+            NumPlayers = numPlayers;
+            Width = width;
+            Height = height;
+
             Console.WriteLine("Welcome to Lines!");
             Console.WriteLine("A 9 by 9 board will be generated!");
+            Board = new GameBoard(Width, Height);
+            PlayerManager = new PlayerManager();
 
-            
+            AddPlayersToGame();
+
         }
 
-        private void InitializeGameBoard(int length, int width)
+        /// <summary>
+        /// Add NumPlayers players to the game
+        /// </summary>
+        /// <param name="numPlayers"></param>
+        private void AddPlayersToGame()
         {
-            board = new GameBoard(length, width);
+            int i = 0;
+
+            while (i < NumPlayers)
+            {
+                PlayerManager.AddPlayer(UserInput.GetPlayerName());
+            }
         }
     }
 }
