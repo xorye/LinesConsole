@@ -17,9 +17,9 @@ namespace LinesConsole
             playerList = new PlayerList();
         }
 
-        public void AddPlayer(String name)
+        public void AddPlayer(String name, char marker)
         {
-            Player player = new Player(name);
+            Player player = new Player(name, marker);
             playerList.AddPlayer(player);
 
             if (GetNumberOfPlayers() == 1)

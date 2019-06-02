@@ -9,15 +9,17 @@ namespace LinesConsole
     class Player
     {
 
-        private String name;
-        private int score;
-        private Player nextPlayer;
+        private String Name;
+        private char Marker;
+        private int Score;
+        private Player NextPlayer;
 
-        public Player(String name)
+        public Player(String name, char marker)
         {
-            this.name = name;
-            this.score = 0;
-            this.nextPlayer = null;
+            Name = name;
+            Marker = marker;
+            Score = 0;
+            NextPlayer = null;
         }
 
         public Edge GetMove()
@@ -28,12 +30,12 @@ namespace LinesConsole
 
         public void SetNextPlayer(Player player)
         {
-            nextPlayer = player;
+            NextPlayer = player;
         }
 
         public Player GetNextPlayer()
         {
-            return nextPlayer;
+            return NextPlayer;
         }
     }
 }

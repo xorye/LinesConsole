@@ -12,19 +12,19 @@ namespace LinesConsole
 
         private GameBoard Board;
         private PlayerManager PlayerManager;
-        private int NumPlayers, Width, Height;
+        private int NumPlayers, Length, Width;
         private Boolean IsFinished;
 
-        public Game(int numPlayers, int width, int height)
+        public Game(int numPlayers, int length, int width)
         {
             NumPlayers = numPlayers;
             Width = width;
-            Height = height;
+            Length = length;
             IsFinished = false;
 
             PrintWelcomeMessage();
 
-            Board = new GameBoard(Width, Height);
+            Board = new GameBoard(Length, Width);
             PlayerManager = new PlayerManager();
             AddPlayersToGame();
 
@@ -38,7 +38,7 @@ namespace LinesConsole
 
             while (!IsFinished)
             {
-
+                Board.PrintBoard();
             }
         }
 
