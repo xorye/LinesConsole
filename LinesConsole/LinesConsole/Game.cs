@@ -13,21 +13,44 @@ namespace LinesConsole
         private GameBoard Board;
         private PlayerManager PlayerManager;
         private int NumPlayers, Width, Height;
-
+        private Boolean IsFinished;
 
         public Game(int numPlayers, int width, int height)
         {
             NumPlayers = numPlayers;
             Width = width;
             Height = height;
+            IsFinished = false;
 
-            Console.WriteLine("Welcome to Lines!");
-            Console.WriteLine("A 9 by 9 board will be generated!");
+            PrintWelcomeMessage();
+
             Board = new GameBoard(Width, Height);
             PlayerManager = new PlayerManager();
-
             AddPlayersToGame();
 
+            StartGameLoop();
+
+        }
+
+        private void StartGameLoop()
+        {
+            Console.WriteLine("The game will begin...");
+
+            while (!IsFinished)
+            {
+
+            }
+        }
+
+        private void PrintWelcomeMessage()
+        {
+            Console.WriteLine("Welcome to...");
+            Console.WriteLine("  _      _                 ");
+            Console.WriteLine(" | |    (_)                ");
+            Console.WriteLine(" | |     _ _ __   ___  ___ ");
+            Console.WriteLine(" | |    | | '_ \\ / _ \\/ __|");
+            Console.WriteLine(" | |____| | | | |  __/\\__ \\");
+            Console.WriteLine(" |______|_|_| |_|\\___||___/");
         }
 
         /// <summary>
@@ -41,6 +64,7 @@ namespace LinesConsole
             while (i < NumPlayers)
             {
                 PlayerManager.AddPlayer(UserInput.GetPlayerName());
+                i++;
             }
         }
     }

@@ -26,7 +26,7 @@ namespace LinesConsole
         /// Checks the validity of an edge by checking if the given nodes are
         /// adjacent to each other.
         /// </summary>
-        private void CheckValidEdge(int source, int dest)
+        private void CheckValidEdge()
         {
             return;
         }
