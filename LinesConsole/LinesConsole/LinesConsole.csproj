@@ -59,10 +59,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Edge.cs" />
+    <Compile Include="EdgeManager.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="GameBoard.cs" />
     <Compile Include="InvalidEdgeException.cs" />
-    <Compile Include="Node.cs" />
+    <Compile Include="Square.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="PlayerList.cs" />
     <Compile Include="PlayerManager.cs" />

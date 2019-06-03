@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LinesConsole
 {
-    class EdgeSet
+    class EdgeManager
     {
     }
 }
