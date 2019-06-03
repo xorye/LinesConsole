@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace LinesConsole
 {
-    class EdgeManager
+    class Coordinate
     {
-        private HashSet<int> EdgeSet;
+        private int X, Y;
 
-        public EdgeManager()
+        public Coordinate(int x, int y)
         {
-            EdgeSet = new HashSet<int>();
+            X = x;
+            Y = y;
         }
 
     }

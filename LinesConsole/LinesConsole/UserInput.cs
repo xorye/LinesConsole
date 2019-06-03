@@ -25,20 +25,39 @@ namespace LinesConsole
         /// <returns></returns>
         public static Edge GetEdge()
         {
-            Console.WriteLine("Enter a move in this format: x,y");
-            int[] twoIntegers = GetTwoIntegers();
+            Console.WriteLine("Enter a move: ");
+            int userInput = GetInteger();
             Edge newEdge;
 
             while (true)
             {
                 try
                 {
-                    newEdge = new Edge(twoIntegers);
+                    newEdge = new Edge(userInput);
                     return newEdge;
                 }
                 catch (InvalidEdgeException)
                 {
-                    twoIntegers = GetTwoIntegers();
+                    userInput = GetInteger();
+                }
+            }
+        }
+
+        private static int GetInteger()
+        {
+            String input = ReadLine();
+            int result;
+
+            while (true)
+            {
+                try
+                {
+                    result = Int32.Parse(input);
+                    return result;
+                }
+                catch (System.FormatException)
+                {
+                    input = ReadLine();
                 }
             }
         }
@@ -104,9 +123,7 @@ namespace LinesConsole
             {
                 return false;
             }
-
             return true;
-
         }
 
     }
