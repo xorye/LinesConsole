@@ -9,6 +9,7 @@ namespace LinesConsole
     class Edge
     {
         private Coordinate Source, Dest;
+        private Boolean Filled;
 
         public Edge(Coordinate[] coordinates)
         {   

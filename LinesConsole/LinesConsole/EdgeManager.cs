@@ -8,11 +8,22 @@ namespace LinesConsole
 {
     class EdgeManager
     {
-        private HashSet<int> EdgeSet;
+        private Edge[] Edges;
+        private int NumOfEdges;
 
         public EdgeManager()
         {
-            EdgeSet = new HashSet<int>();
+            NumOfEdges = (2 * Game.Length * Game.Width) - Game.Length - Game.Width;
+            InitializeEdgeArray();
+        }
+
+        private void InitializeEdgeArray()
+        {
+            Edges = new Edge[NumOfEdges];
+            for (int i = 0; i < NumOfEdges; i++)
+            {
+                Edges[i] = new Edge(i);
+            }
         }
 
     }
