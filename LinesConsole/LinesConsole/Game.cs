@@ -10,10 +10,14 @@ namespace LinesConsole
     class Game
     {
 
+        public static int Length;
+        public static int Width;
+
         private GameBoard Board;
         private PlayerManager PlayerManager;
-        private int NumPlayers, Length, Width;
+        private int NumPlayers;
         private Boolean IsFinished;
+
 
         public Game(int numPlayers, int length, int width)
         {
@@ -24,7 +28,7 @@ namespace LinesConsole
 
             PrintWelcomeMessage();
 
-            Board = new GameBoard(Length, Width);
+            Board = new GameBoard();
             PlayerManager = new PlayerManager();
             AddPlayersToGame();
 
@@ -49,7 +53,7 @@ namespace LinesConsole
             Console.WriteLine(" | |    (_)                ");
             Console.WriteLine(" | |     _ _ __   ___  ___ ");
             Console.WriteLine(" | |    | | '_ \\ / _ \\/ __|");
-            Console.WriteLine(" | |____| | | | |  __/\\__ \\");
+            Console.WriteLine(" | |_____| | | | |  __/\\__ \\");
             Console.WriteLine(" |______|_|_| |_|\\___||___/");
         }
 

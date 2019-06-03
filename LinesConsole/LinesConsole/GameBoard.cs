@@ -11,15 +11,12 @@ namespace LinesConsole
     {
         private const String HORIZONTAL_EDGE = "---";
         private const String VERTICAL_EDGE = "|";
-        private int Length, Width;
-        private Node[] Nodes;
-        private EdgeSet EdgeSet;
+        private Square[,] SquareMatrix;
+        private EdgeManager EdgeSet;
 
-        public GameBoard(int length, int width)
+        public GameBoard()
         {
-            Length = length;
-            Width = width;
-            EdgeSet = new EdgeSet();
+            EdgeSet = new EdgeManager();
             InitializeNodeArray();   
         }
 
@@ -28,34 +25,64 @@ namespace LinesConsole
         /// </summary>
         public void PrintBoard()
         {
+
             StringBuilder sb = new StringBuilder();
 
-            for (int i = 0; i < Width; i++)
+            
+        }
+
+        /// <summary>
+        /// Appends the row where horizontal edges can lie
+        /// </summary>
+        /// <param name="row"></param>
+        /// <param name="sb"></param>
+        private void AppendNodeRow(int row, StringBuilder sb)
+        {
+            for (int i = 0; i < Game.Length - 1; i++)
             {
-                for (int j = 0; j < Width; j++)
-                {
-                    sb.Append(".");
-                    if (j != Width - 1)
-                    {
-                        sb.Append(" ");
-                    }
-                }
+                sb.Append("+");
+                // Here, determine if horizontal edge should exist
+                // If it should exist, append edge, else append space
+                sb.Append("   ");
+            }
+            sb.Append("+");
+        }
+
+        /// <summary>
+        /// Appends the row where vertical edges can lie
+        /// </summary>
+        /// <param name="row"></param>
+        /// <param name="sb"></param>
+        private void AppendEdgeRow(int row, StringBuilder sb)
+        {
+            for (int i = 0; i < Game.Length - 1; i++)
+            {
+                // Here, determine if vertical edge should exist
+                // If it should exist, append edge, else append space
+                sb.Append(" ");
+
+                // Here, determine if the current square has been 
             }
         }
 
+
+
         private void InitializeNodeArray()
         {
-            Nodes = new Node[GetNumberOfNodes()];
-            for (int i = 0; i < GetNumberOfNodes(); i++)
+            SquareMatrix = new Square[Game.Width - 1, Game.Length - 1];
+            for (int i = 0; i < Game.Width - 1; i++)
             {
-                Nodes[i] = new Node(i);    
+                for (int j = 0; j < Game.Length - 1; j++)
+                {
+                    SquareMatrix[i, j] = new Square(i, j);
+                }
             }
 
         }
 
         private int GetNumberOfNodes()
         {
-            return Length * Width;
+            return Game.Length * Game.Width;
         }
 
 
